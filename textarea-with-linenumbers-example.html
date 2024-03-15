@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="jquery.textarea-with-linenumbers.css">
+    <style>
+        textarea {
+            background: #c0c0c0;
+            border: 1px solid #888;
+            resize: none;
+            width: 350px;
+            height: 150px;
+        }
+        div.message {
+            height: 30px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.textarea-with-linenumbers.js"></script>
+</head>
+
+<body>
+
+    <div class="linenumbers-wrapper">
+        <textarea></textarea>
+        <div class="message"></div>
+    </div>
+
+    <script>
+        $('textarea').linenumbers({
+            'col_width': '50px',
+            lineValidatorCallback: function (obj, idx, line, current_line) {
+                if (current_line && line) {
+                    $(obj).parent().find('.message').html('Current line: ' + line);
+                }
+                if (line == 'warning')
+                    return 'warning';
+                else if (line == 'error')
+                    return 'error';
+                else if (line == 'success')
+                    return 'success';
+                return 0;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
