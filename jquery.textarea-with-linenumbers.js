@@ -2,7 +2,7 @@
     $.fn.linenumbers = function(in_opts){
         // Settings and Defaults
         var opt = $.extend({
-            col_width: '30px',
+            gutter_width: '30px',
             start: 1,
             digits: 3.,
             lineValidatorCallback: function(){return 0;}
@@ -22,8 +22,8 @@
             // Edit the existing textarea's styles
             $(this).css({
                 'position': 'relative',
-                'left': parseFloat(opt.col_width)+'px',
-                'width': parseFloat($(this).css("width"))-parseFloat(opt.col_width)+'px',
+                'left': parseFloat(opt.gutter_width)+'px',
+                'width': parseFloat($(this).css("width"))-parseFloat(opt.gutter_width)+'px',
                 'white-space': 'pre',
                 'overflow-wrap': 'normal',
                 'overflow-x': 'scroll',
@@ -37,7 +37,7 @@
                 'margin-top': -(textarea_height+parseFloat($(this).css('border-top'))+parseFloat($(this).css('border-bottom'))+parseFloat($(this).css('padding-top'))+parseFloat($(this).css('padding-bottom')))+'px',
                 'padding-top': parseFloat($(this).css('padding-top')) + 'px',
                 'padding-bottom': parseFloat($(this).css('padding-bottom')) + 'px',
-                'width': parseFloat(opt.col_width)+'px',
+                'width': parseFloat(opt.gutter_width)+'px',
                 'height': textarea_height+'px',
 
                 // misc css stuff
@@ -69,7 +69,6 @@
 
                 // Break apart and regex the lines, everything to spaces sans linebreaks
                 var lines = "\n"+$(this).val();
-                // lines = lines.match(/[^\n]*\n[^\n]*/gi);
                 lines = text.split("\n");
                 // declare output var
                 var line_number_output='';
