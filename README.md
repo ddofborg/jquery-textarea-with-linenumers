@@ -4,7 +4,7 @@ This plugin allows to color the background of each line number based on classes 
 
 Also it's possible to see at which line the cursor is. This can be used to show use text if there is an error on a line. Or to decode the raw test in more useful use text.
 
-The code is based [https://github.com/pgooch/jQueryLinenNumbersPlugin](https://github.com/pgooch/jQueryLinenNumbersPlugin) by Phillip Gooch.
+The code is based [jQueryLinenNumbersPlugin by Phillip Gooch](https://github.com/pgooch/jQueryLinenNumbersPlugin).
 
 
 ## Example
